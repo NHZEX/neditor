@@ -773,7 +773,7 @@ var domUtils = (dom.domUtils = {
   on: function(element, type, handler) {
     var types = utils.isArray(type) ? type : utils.trim(type).split(/\s+/),
       k = types.length;
-    if (k)
+    if (k && element)
       while (k--) {
         type = types[k];
         if (element.addEventListener) {
@@ -832,7 +832,7 @@ var domUtils = (dom.domUtils = {
   un: function(element, type, handler) {
     var types = utils.isArray(type) ? type : utils.trim(type).split(/\s+/),
       k = types.length;
-    if (k)
+    if (k && element)
       while (k--) {
         type = types[k];
         if (element.removeEventListener) {
